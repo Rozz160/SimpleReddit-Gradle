@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.project.simplereddit">
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+
+    <application
+        android:label="@string/app_name">
+        <activity
+            android:name="com.project.simplereddit.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.project.simplereddit.listactivity.RedditPostList"
+            android:label="@string/title_activity_reddit_post_list" >
+        </activity>
+        <activity
+            android:name="com.project.simplereddit.FullImageActivity"
+            android:label="@string/title_activity_full_image"
+            android:parentActivityName="com.project.simplereddit.listactivity.RedditPostList" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.project.simplereddit.RedditPostList" />
+        </activity>
+        <activity
+			android:name="com.project.simplereddit.listactivity.CommentList"
+            android:label="@string/title_activity_comment_list"
+            android:parentActivityName="com.project.simplereddit.listactivity.RedditPostList" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.project.simplereddit.RedditPostList" />
+        </activity>
+    </application>
+
+</manifest>
